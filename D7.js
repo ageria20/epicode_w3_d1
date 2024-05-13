@@ -2,264 +2,330 @@
   Scrivi una funzione per concatenare due stringhe ricevute come parametri, selezionando solamente i primi 2 caratteri della
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
-console.log("-----------------------------ESERCIZIO 1-----------------------------")
+console.log(
+  "-----------------------------ESERCIZIO 1-----------------------------"
+);
 function filterLetter(string1, string2) {
-  const newString = string1.charAt(0).toUpperCase() + string1.charAt(1).toUpperCase() + string2.charAt(string2.length - 3).toUpperCase() + string2.charAt(string2.length - 2).toUpperCase() + string2.charAt(string2.length - 1).toUpperCase()
-  return newString
-} 
+  const newString =
+    string1.charAt(0).toUpperCase() +
+    string1.charAt(1).toUpperCase() +
+    string2.charAt(string2.length - 3).toUpperCase() +
+    string2.charAt(string2.length - 2).toUpperCase() +
+    string2.charAt(string2.length - 1).toUpperCase();
+  return newString;
+}
 
-console.log(filterLetter("Ciao","Mondo"))
+console.log(filterLetter("Ciao", "Mondo"));
 
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
-console.log("-----------------------------ESERCIZIO 2-----------------------------")
+console.log(
+  "-----------------------------ESERCIZIO 2-----------------------------"
+);
 
 function elementArray() {
-  let array = []
-  for (let i = array.length; i < 10 ; i++) {
-    const randomEl = Math.floor(Math.random() * 101)
-    array.push(randomEl)
+  let array = [];
+  for (let i = array.length; i < 10; i++) {
+    const randomEl = Math.floor(Math.random() * 101);
+    array.push(randomEl);
   }
-  return array
+  return array;
 }
-console.log(elementArray())
+console.log(elementArray());
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
-console.log("-----------------------------ESERCIZIO 3-----------------------------") 
+console.log(
+  "-----------------------------ESERCIZIO 3-----------------------------"
+);
 // const arr = elementArray()
-const arr = elementArray()
-const evenNum = arr.filter((num) => num % 2 === 0) 
+const arr = elementArray();
+const evenNum = arr.filter((num) => num % 2 === 0);
 
-console.log(elementArray())
-console.log(evenNum)
+console.log(elementArray());
+console.log(evenNum);
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-console.log("-----------------------------ESERCIZIO 4-----------------------------") 
+console.log(
+  "-----------------------------ESERCIZIO 4-----------------------------"
+);
 function sumNums(arr) {
-  arr.forEach(function(element) {
-  let sum = 0
-  sum = element + sum
-  return sum
-})
+  let sum = 0;
+  arr.forEach(function (element) {
+    sum = element + sum;
+  });
+  return sum;
 }
-console.log(sumNums(arr))
+console.log(sumNums(arr));
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+console.log(
+  "-----------------------------ESERCIZIO 5-----------------------------"
+);
 
+const numSum = (array) => {
+  return array.reduce((acc, currValue) => acc + currValue, 0);
+};
 
-
+console.log(numSum(arr));
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
-console.log("-----------------------------ESERCIZIO 6-----------------------------")
+console.log(
+  "-----------------------------ESERCIZIO 6-----------------------------"
+);
 
-let n = 4
+let n = 4;
 function getNumbers(arr, n) {
-  return arr.map(element => element * n)
-  
+  return arr.map((element) => element * n);
 }
 
-console.log(getNumbers(arr, 5))
+console.log(getNumbers(arr, 5));
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
-console.log("-----------------------------ESERCIZIO 7-----------------------------")
+console.log(
+  "-----------------------------ESERCIZIO 7-----------------------------"
+);
 
-const arr2 = ["EPICODE", "is", "ajejeje"]
-function getLength(arr){
-const newArr2 = arr2.map( element => element.length)
-return newArr2
+const arr2 = ["EPICODE", "is", "ajejeje"];
+function getLength(arr) {
+  const newArr2 = arr2.map((element) => element.length);
+  return newArr2;
 }
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
-console.log("-----------------------------ESERCIZIO 8-----------------------------")
+console.log(
+  "-----------------------------ESERCIZIO 8-----------------------------"
+);
 
 function oddArr() {
-  let arr = []
+  let arr = [];
   for (let i = 1; i <= 99; i++) {
-    if (i % 2 !== 0 ) arr.push(i);
+    if (i % 2 !== 0) arr.push(i);
   }
-  return arr
+  return arr;
 }
 
-console.log(oddArr())
-
+console.log(oddArr());
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
   {
-    Title: 'The Lord of the Rings: The Fellowship of the Ring',
-    Year: '2001',
-    imdbID: 'tt0120737',
-    Type: 'movie',
+    Title: "The Lord of the Rings: The Fellowship of the Ring",
+    Year: "2001",
+    imdbID: "tt0120737",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
   },
   {
-    Title: 'The Lord of the Rings: The Return of the King',
-    Year: '2003',
-    imdbID: 'tt0167260',
-    Type: 'movie',
+    Title: "The Lord of the Rings: The Return of the King",
+    Year: "2003",
+    imdbID: "tt0167260",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
   },
   {
-    Title: 'The Lord of the Rings: The Two Towers',
-    Year: '2002',
-    imdbID: 'tt0167261',
-    Type: 'movie',
+    Title: "The Lord of the Rings: The Two Towers",
+    Year: "2002",
+    imdbID: "tt0167261",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
   },
   {
-    Title: 'Lord of War',
-    Year: '2005',
-    imdbID: 'tt0399295',
-    Type: 'movie',
+    Title: "Lord of War",
+    Year: "2005",
+    imdbID: "tt0399295",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
   },
   {
-    Title: 'Lords of Dogtown',
-    Year: '2005',
-    imdbID: 'tt0355702',
-    Type: 'movie',
+    Title: "Lords of Dogtown",
+    Year: "2005",
+    imdbID: "tt0355702",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
   },
   {
-    Title: 'The Lord of the Rings',
-    Year: '1978',
-    imdbID: 'tt0077869',
-    Type: 'movie',
+    Title: "The Lord of the Rings",
+    Year: "1978",
+    imdbID: "tt0077869",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
   },
   {
-    Title: 'Lord of the Flies',
-    Year: '1990',
-    imdbID: 'tt0100054',
-    Type: 'movie',
+    Title: "Lord of the Flies",
+    Year: "1990",
+    imdbID: "tt0100054",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
   },
   {
-    Title: 'The Lords of Salem',
-    Year: '2012',
-    imdbID: 'tt1731697',
-    Type: 'movie',
+    Title: "The Lords of Salem",
+    Year: "2012",
+    imdbID: "tt1731697",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
   },
   {
-    Title: 'Greystoke: The Legend of Tarzan, Lord of the Apes',
-    Year: '1984',
-    imdbID: 'tt0087365',
-    Type: 'movie',
+    Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
+    Year: "1984",
+    imdbID: "tt0087365",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
   },
   {
-    Title: 'Lord of the Flies',
-    Year: '1963',
-    imdbID: 'tt0057261',
-    Type: 'movie',
+    Title: "Lord of the Flies",
+    Year: "1963",
+    imdbID: "tt0057261",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
   },
   {
-    Title: 'The Avengers',
-    Year: '2012',
-    imdbID: 'tt0848228',
-    Type: 'movie',
+    Title: "The Avengers",
+    Year: "2012",
+    imdbID: "tt0848228",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
   },
   {
-    Title: 'Avengers: Infinity War',
-    Year: '2018',
-    imdbID: 'tt4154756',
-    Type: 'movie',
+    Title: "Avengers: Infinity War",
+    Year: "2018",
+    imdbID: "tt4154756",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
   },
   {
-    Title: 'Avengers: Age of Ultron',
-    Year: '2015',
-    imdbID: 'tt2395427',
-    Type: 'movie',
+    Title: "Avengers: Age of Ultron",
+    Year: "2015",
+    imdbID: "tt2395427",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
   },
   {
-    Title: 'Avengers: Endgame',
-    Year: '2019',
-    imdbID: 'tt4154796',
-    Type: 'movie',
+    Title: "Avengers: Endgame",
+    Year: "2019",
+    imdbID: "tt4154796",
+    Type: "movie",
     Poster:
-      'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
+      "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
-]
+];
 
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
-console.log("-----------------------------ESERCIZIO 9-----------------------------")
+console.log(
+  "-----------------------------ESERCIZIO 9-----------------------------"
+);
 
-function oldestMovie(movie) {
-const oldestYear = movies.forEach(film => console.log(Math.min(film.Year)))
-return oldestYear
+function getOldestMovie(arr) {
+  let yearElement = { Year: 2100 };
+  arr.forEach((movie) => {
+    let currentYear = parseInt(movie.Year);
+    if (currentYear < yearElement.Year) yearElement = currentYear;
+  });
+
+  return yearElement;
 }
-console.log(oldestMovie)
 
+console.log(getOldestMovie(movies));
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
-console.log("-----------------------------ESERCIZIO 10-----------------------------")
-const filmCount = (array) => array.length
-console.log(filmCount(movies))
+console.log(
+  "-----------------------------ESERCIZIO 10-----------------------------"
+);
+
+const getFilm = (array) => {
+  return array.length;
+};
+
+console.log(getFilm(movies));
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
-console.log("-----------------------------ESERCIZIO 11-----------------------------")
-const title = movies.map(element => element.Title )
-console.log(title)
+console.log(
+  "-----------------------------ESERCIZIO 11-----------------------------"
+);
+function getTitle(array) {
+  return array.map((filmTitle) => filmTitle.Title);
+}
 
-
+console.log(getTitle(movies));
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
-console.log("-----------------------------ESERCIZIO 12-----------------------------")
-const currentFilm = movies.filter(element => element.Year >= 2000 )
+console.log(
+  "-----------------------------ESERCIZIO 12-----------------------------"
+);
+const currentFilm = (array) => {
+  return movies.filter((element) => element.Year >= 2000);
+};
 
-console.log(currentFilm)
+console.log(currentFilm(movies));
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-console.log("-----------------------------ESERCIZIO 13-----------------------------")
+console.log(
+  "-----------------------------ESERCIZIO 13-----------------------------"
+);
 
-/* ESERCIZIO 14 (find)
+const getYearSum = (array) => {
+  return array.reduce(
+    (total, currValue) => total + parseInt(currValue.Year),
+    0
+  );
+};
+
+console.log(getYearSum(movies));
+
+console; /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
-console.log("-----------------------------ESERCIZIO 14-----------------------------")
+console.log(
+  "-----------------------------ESERCIZIO 14-----------------------------"
+);
 
-const findImdb = movies.find(imd)
+const getImdb = function (array, imdb) {
+  return array.find((element) => element.imdbId === imdb);
+};
 
-console.log(getImdb('tt0355702'))
+console.log(getImdb(movies, "tt0355702"));
 
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
-console.log("-----------------------------ESERCIZIO 15-----------------------------")
+console.log(
+  "-----------------------------ESERCIZIO 15-----------------------------"
+);
+
+const getIndex = function (array, year) {
+  return array.findIndex((element) => parseInt(element.Year) === year);
+};
+
+console.log(getImdb(movies, 2019));
